@@ -1,0 +1,72 @@
+import {heroes} from './data.js';
+
+const getHeroesById = (id)=> heroes.find((hero) => hero.id === id)
+const getHeroesByOwner = (owner)=> heroes.filter((hero)=>hero.owner === owner)
+
+const getHeroes = (id)=> heroes.map((hero) => hero.name)
+
+console.log(getHeroesById(5))
+console.log(getHeroesByOwner("DC"));
+console.log(getHeroes(heroes));
+
+//promises
+//las promesas son asincronas
+//se ejecuta todo lo que es sincrono y luego las promesas
+const promesa = new Promise((resolve, reject)=>{
+    setTimeout(() => {
+        const heroe = getHeroesById(2);
+        console.log(heroe) 
+    }, 2000);
+});
+
+promesa.then(()=>{
+    console.log('then de la promesa')
+})
+
+//fecth API
+const apiKey = 'Dp47iisvZqAo6y5thqoCQFrjxMS9RunK';
+
+const peticion = fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
+peticion
+    .then(res => res.json())
+    .then(({data}) =>{
+        const {url} = data.images.original;
+
+        const img = document.createElement('img');
+        img.src = url;
+
+        document.body.append(img);
+    })
+    .catch(console.warn);
+
+//async/await
+
+const getImagen = async()=>{
+    const api_key = 'Dp47iisvZqAo6y5thqoCQFrjxMS9RunK';
+    const res = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${api_key}`);
+    const {data} = await res.json();
+    
+    const {url} = data.images.original;
+
+    console.log(url);
+
+}
+getImagen();
+
+//condicional ternarios
+
+const activo = true;
+
+// sin cond tern
+// let mensaje = '';
+// if(activo){
+//     mensaje = 'Activo';
+// }else{
+//     mensaje = 'Inactivo'
+// }
+
+//con cond tern
+const mensaje = (!activo) ? 'Activo' : 'Inactivo';
+const mensaje2 = activo && 'Activo';
+console.log(mensaje);
+console.log(mensaje2);
