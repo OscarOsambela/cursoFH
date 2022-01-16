@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import React from "react";
+import ReactDOM from "react-dom";
+// import MainApp from "./09. useContext/MainApp";
+import { HeroesApp } from "./heroes-app/HeroesApp";
+// import TodoApp from "./08. useReducer/TodoApp";
+// // import CallbackHook from "./06. useMemo/CallbackHook";
+// import { Padre } from "./07-tarea-memo/Padre";
+// //import MemoHook from "./06. useMemo/MemoHook";
+// // import FormWithCustomHook from "./02. useEffect/FormWithCustomHook";
+// //import MutipleCustomHooks from "./03. Examples/MutipleCustomHooks";
+// // import FocusScreen from "./04. useRef/FocusScreen";
+// // import ExampleShowHide from "./04. useRef/ExampleShowHide";
+// // import Layout from "./05. useLayoutEffect/LayoutEffect";
+// // import Memorize from "./06. useMemo/Memorize";
+// // import CounterApp from "./01. useState/CounterApp";
+// // import CounterWithCustomHook from "./01. useState/CounterWithCustomHook";
+// // import SimpleForm from "./02. useEffect/SimpleForm";
+// import "./08. useReducer/intro-reducer";
+ReactDOM.render(<HeroesApp />, document.getElementById("root"));

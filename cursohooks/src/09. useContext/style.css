@@ -1,0 +1,12 @@
+body {
+  padding: 40px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  margin: 0 35px 0 0;
+}
