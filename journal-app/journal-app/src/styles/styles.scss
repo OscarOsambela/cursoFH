@@ -1,8 +1,12 @@
-@import "./base/settings";
-@import "./base/base";
-@import "./base/components/auth";
-@import "./base/components/buttons";
-@import "./base/components/links";
-@import "./base/components/journal";
-@import "./base/components/nothing.scss";
-@import "./base/components/notes.scss";
+
+
+@import './base/settings';
+@import './base/base';
+
+// Components
+@import './components/auth';
+@import './components/buttons';
+@import './components/links';
+@import './components/journal';
+@import './components/nothing';
+@import './components/notes';
