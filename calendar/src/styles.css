@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+}
+.calendar-screen {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+}
+
+.rbc-day-slot .rbc-events-container {
+  margin-right: 0;
+}
+.react-datetime-picker__wrapper{
+  border: none!important;
+}
+.react-datetime-picker__wrapper input:focus{
+  border: none;
+  outline: none;
+}
+.fab{
+  border-radius: 100%;
+  bottom: 25px;
+  font-size: 25px;
+  padding: 10px;
+  position: fixed;
+  right: 25px;
+}
