@@ -16,32 +16,32 @@ moment.locale('es');
 
 const localizer = momentLocalizer(moment)
 
-const events = [{
-  title: "Cumpleaños",
-  start: moment().toDate(),
-  end: moment().add(2, 'hours').toDate(),
-  bgcolor: "#fafafa",
-  notes: "comprar el pastel",
-  user: {
-    _id: '123',
-    name: 'Oscar'
-  }
-}]
+// const events = [{
+//   title: "Cumpleaños",
+//   start: moment().toDate(),
+//   end: moment().add(2, 'hours').toDate(),
+//   bgcolor: "#fafafa",
+//   notes: "comprar el pastel",
+//   user: {
+//     _id: '123',
+//     name: 'Oscar'
+//   }
+// }]
 
 export const CalendarScreen = () => {
 
   const dispatch = useDispatch();
-  const selector = useSelector(state => state.calendar)
-console.log(selector);
+  const {events} = useSelector(state => state.calendar)
+console.log(events);
   const [lastView, setLastView] = useState(localStorage.getItem('lastView') || 'month')
 
   const onDoubleClick = (e) => {
     dispatch(uiOpenModal());
+    dispatch(uiOpenModal())
   }
 
   const onSelectEvent = (e) => {
     dispatch(eventSetActive());
-     dispatch(uiOpenModal())
   }
 
   const onViewChange = (e) => {
