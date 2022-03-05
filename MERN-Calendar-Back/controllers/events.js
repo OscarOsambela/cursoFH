@@ -1,15 +1,30 @@
-const getEvents = (req, res) => {
+const Events = require("../models/events");
+
+const getEvents = async (req, res) => {
+  const events_ = await Events.find().populate("user", "name");
   res.json({
     ok: true,
-    msg: "getEvents",
+    msg: events_,
   });
 };
 
-const createEvents = (req, res) => {
-  res.json({
-    ok: true,
-    msg: "crear eventos",
-  });
+const createEvents = async (req, res) => {
+  //const { title, notes, start, end, user } = req.body;
+  const event_ = new Events(req.body);
+  try {
+    event_.user = req.uid;
+    const eventSave = await event_.save();
+    res.json({
+      ok: true,
+      msg: eventSave,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      ok: false,
+      msg: "Please connect with your administrator",
+    });
+  }
 };
 
 const updateEvents = (req, res) => {

@@ -33,4 +33,11 @@ router.post(
     check("end", "La fecha final es obligatoria").custom(isDate),
     validateFields,
   ],
-  createE
+  createEvents
+);
+
+router.put("/:id", updateEvents);
+
+router.delete("/:id", deleteEvents);
+
+module.exports = router;
